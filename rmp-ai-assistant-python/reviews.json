@@ -1,0 +1,65 @@
+{
+    "reviews": [
+      {
+        "professor": "Prof. John Smith",
+        "review": "Great professor! His lectures are clear and engaging, and he makes complex topics easy to understand. Highly recommended for anyone taking Math.",
+        "subject": "Math",
+        "stars": 5
+      },
+      {
+        "professor": "Prof. Emily Johnson",
+        "review": "Prof. Johnson is very knowledgeable and approachable. However, her exams are tough, and you need to study hard to do well. Overall, a good experience.",
+        "subject": "Chemistry",
+        "stars": 4
+      },
+      {
+        "professor": "Prof. Mark Davis",
+        "review": "Interesting lectures but can be a bit disorganized. Make sure to attend all classes because the material isn't always in the textbook.",
+        "subject": "History",
+        "stars": 3
+      },
+      {
+        "professor": "Prof. Laura Martinez",
+        "review": "Prof. Martinez is excellent! She provides real-world examples that make the subject matter come alive. The workload is reasonable, and she is very supportive.",
+        "subject": "Economics",
+        "stars": 5
+      },
+      {
+        "professor": "Prof. Andrew Lee",
+        "review": "Very knowledgeable in his field, but his teaching style can be a bit dry. You'll learn a lot, but you need to stay focused.",
+        "subject": "Physics",
+        "stars": 3
+      },
+      {
+        "professor": "Prof. Sarah Taylor",
+        "review": "Prof. Taylor is amazing! She is very patient and always willing to help. Her classes are interactive, and she really cares about her students.",
+        "subject": "Biology",
+        "stars": 5
+      },
+      {
+        "professor": "Prof. Michael Brown",
+        "review": "Good professor but very strict with deadlines. Make sure to stay on top of assignments. He knows the material well but expects a lot from his students.",
+        "subject": "Computer Science",
+        "stars": 4
+      },
+      {
+        "professor": "Prof. Lisa White",
+        "review": "Her lectures are thorough and detailed, but sometimes it's hard to keep up with the pace. If you're prepared to work hard, you'll do well in her class.",
+        "subject": "Statistics",
+        "stars": 4
+      },
+      {
+        "professor": "Prof. Robert Green",
+        "review": "Prof. Green is okay. His lectures are sometimes hard to follow, and the exams are challenging. Not the best, but not the worst either.",
+        "subject": "Philosophy",
+        "stars": 2
+      },
+      {
+        "professor": "Prof. Jessica Wilson",
+        "review": "An outstanding professor! She explains concepts very clearly and is always available for extra help. Her passion for teaching is evident.",
+        "subject": "Literature",
+        "stars": 5
+      }
+    ]
+  }
+  
