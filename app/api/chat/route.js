@@ -32,7 +32,7 @@ export async function POST(req) {
 
     let resultString = ''
     results.matches.forEach((match) => {
-        resultString =+ `
+        resultString += `
         Returned Results:
         Professor: ${match.id}
         Review: ${match.metadata.stars}
