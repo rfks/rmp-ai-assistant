@@ -1,14 +1,26 @@
 'use client'
 
-import { Box, Button, Stack, TextField } from '@mui/material'
-import { useState } from 'react'
+import { Grid, Box, Button, Stack, TextField } from '@mui/material'
+import { useState,useRef,useEffect } from 'react'
 
 import Image from "next/image";
 
 export default function Home() {
-  const [prof,setProf] = useState('')
+
+  const [prof,setProf] = useState(
+    {
+      "professor": "",
+      "review": "",
+      "subject": "",
+      "stars": ""
+    })
   const updateProf = async () => {
-    setProf('')
+    setProf({
+      "professor": "",
+      "review": "",
+      "subject": "",
+      "stars": ""
+    })
     if (!prof) {
       return
     }
@@ -19,6 +31,7 @@ export default function Home() {
       },
       body: JSON.stringify([{content: prof}])
     })
+    console.log(response)
   }
 
   const [messages, setMessages] = useState([
@@ -66,6 +79,16 @@ export default function Home() {
     })
   }
 
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
+  useEffect(() => {
+      scrollToBottom()
+  }, [messages])
+
   return (
     <Box
       width="100vw"
@@ -75,17 +98,42 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
     >
+    <Grid container spacing={4}>
+      <Grid item xs={12} md={6}>
       <Box
         display="flex"
-        flexDirection="row"
+        flexDirection="column"
         justifyContent="center"
         alignItems="center"
+        padding={2}
       >
         <TextField
           fullWidth
-          placeholder="Update Professors"
-          value={prof}
-          onChange={(e) => setProf(e.target.value)}
+          placeholder="Professor Name"
+          value={prof.professor}
+          name="professor"
+          onChange={(e) => setProf({...prof,[e.target.name]:e.target.value})}
+        />
+        <TextField
+          fullWidth
+          placeholder="Review"
+          value={prof.review}
+          name="review"
+          onChange={(e) => setProf({...prof,[e.target.name]:e.target.value})}
+        />
+        <TextField
+          fullWidth
+          placeholder="Subject"
+          value={prof.subject}
+          name="subject"
+          onChange={(e) => setProf({...prof,[e.target.name]:e.target.value})}
+        />
+        <TextField
+          fullWidth
+          placeholder="Stars 1-5"
+          value={prof.stars}
+          name="stars"
+          onChange={(e) => setProf({...prof,[e.target.name]:e.target.value})}
         />
         <Button
           variant="contained"
@@ -94,6 +142,8 @@ export default function Home() {
           Update
         </Button>
       </Box>
+      </Grid>
+      <Grid item xs={12} md={6}>
       <Stack
         direction={'column'}
         width="500px"
@@ -131,6 +181,7 @@ export default function Home() {
               </Box>
             </Box>
           ))}
+          <div ref={messagesEndRef} />
         </Stack>
         <Stack direction={'row'} spacing={2}>
           <TextField
@@ -144,6 +195,8 @@ export default function Home() {
           </Button>
         </Stack>
       </Stack>
+      </Grid>
+      </Grid>
     </Box>
   )  
 }

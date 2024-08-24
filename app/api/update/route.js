@@ -11,7 +11,8 @@ export async function POST(req) {
     const index = pc.index('rag').namespace('ns1')
     const openai = new OpenAI()
 
-    const text = JSON.parse(data[0].content)
+    // const text = JSON.parse(data[0].content)
+    const text = data[0].content
     const embedding = await openai.embeddings.create({
         model: 'text-embedding-3-small',
         input: text.review,
