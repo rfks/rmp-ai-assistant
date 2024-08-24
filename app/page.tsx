@@ -6,6 +6,21 @@ import { useState } from 'react'
 import Image from "next/image";
 
 export default function Home() {
+  const [prof,setProf] = useState('')
+  const updateProf = async () => {
+    setProf('')
+    if (!prof) {
+      return
+    }
+    const response = fetch('api/update', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify([{content: prof}])
+    })
+  }
+
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
@@ -60,6 +75,25 @@ export default function Home() {
       justifyContent="center"
       alignItems="center"
     >
+      <Box
+        display="flex"
+        flexDirection="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <TextField
+          fullWidth
+          placeholder="Update Professors"
+          value={prof}
+          onChange={(e) => setProf(e.target.value)}
+        />
+        <Button
+          variant="contained"
+          onClick={updateProf}
+        >
+          Update
+        </Button>
+      </Box>
       <Stack
         direction={'column'}
         width="500px"
